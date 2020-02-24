@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Registration Page</title>
+<h3>Welcome to Registration Page</h3>
+
+<style>
+body
+{
+    background-color: linen;
+    background-image:url(https://pixelz.cc/wp-content/uploads/2018/12/bheemli-resort-visakhapatnam-india-uhd-4k-wallpaper.jpg);
+    background-size: contain;
+    background-repeat: repeat-x;
+}
+    
+form{
+    background-color: transparent;
+    margin: 70px auto;
+    width: 300px;
+    margin-top: 60px;
+    padding: 60px 20px;
+
+}
+    
+.errormsg
+{
+    background-color:white;
+	color:crimson;
+    font-size: 17px;
+}
+    
+.registerbutton{
+	background-color:white;
+	color: mediumblue;
+	border:none;
+	cursor: pointer;
+	padding: 5px 10px;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	border-radius:10px;
+}
+    
+    .prevbutton
+    {
+	background-color:white;
+	color: mediumblue;
+	border:round;
+	cursor: pointer;
+        font-size: 15px;
+        display: inline-block;
+        border-radius:10px;
+    }
+.prevbutton:hover
+{
+    background-color: lightskyblue;
+}
+.registerbutton:hover
+{
+    background-color: lightskyblue;
+}
+
+label
+{
+    display: table;
+	width:350px;
+    font: normal 25px Calibri !important;
+    color: white;
+}
+h3
+{
+	color: blanchedalmond;
+	text-align:center;
+}
+
+</style>
+</head>
+<body>
+
+	<header>
+			
+		<form action="usercreation" method = "post">
+			<ul>
+				<li>
+						<label for="firstname"> User firstname </label>
+						<input type="text" placeholder="Enter your firstname here" maxlength="25" id="firstname" name= "firstname" required>
+                        <br><br>
+				</li>
+				<li>
+						<label for="lastname"> User Lastname </label>
+						<input type="text" placeholder="Enter your lastname here" maxlength="25" id="lastname" name="lastname" required>
+                        <br><br>
+				</li>
+				<li>
+						<label for="email">User e-mail id</label>
+						<input type="email" placeholder="Enter your email-id here" id="email" name="email" required>
+                        <br><br>
+				</li>
+                <li>
+						<label for="username"> User id/Username </label>
+						<input type="text" placeholder="Enter your username here" maxlength="15" id="username" name="username" required>
+                        <br><br>
+				</li>
+                <li>
+						<label for="pwd"> Password </label>
+						<input type="password"  placeholder="Enter your password here" minlength="4" id="pwd" name="pwd" required>
+                        <br><br>
+				</li>
+				<li class="button">
+						<button class="registerbutton" type="submit">Register</button>
+                    <br><br>
+				</li>
+                <button class ="prevbutton" type="reset" onclick="location.href='/'">
+                    Cancel
+                </button>
+                {% if error1 == 'true' %}
+	            <p class="errormsg"><b>This Username is taken. Please try different one</b></p>
+	            {% endif %}
+                
+                {% if error2 == 'true' %}
+	            <p class="errormsg"><b>This e-mail id is already registered. Please try another</b></p>
+	            {% endif %}
+
+			</ul>
+		</form>
+	</header>
+</body>
+</html>

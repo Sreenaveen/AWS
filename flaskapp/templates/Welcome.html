@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Welcome Page</title>
+
+<h2>Welcome to Cloud Computing</h2>
+
+<style>
+body
+{
+    background-color: linen;
+    background-image:url(https://images.hdqwalls.com/download/montreux-lake-switzerland-4k-da-2560x1440.jpg);
+    background-size: cover;
+    background-repeat: repeat-x;
+}
+.container
+{
+	margin-left:10%;
+	margin-top:10%;
+}
+
+label
+{
+	display: contents;
+	width:500px;
+}
+    
+h2
+{
+	color: blanchedalmond;
+	text-align:center;
+}
+form
+{
+    background-color: transparent;
+    margin: 100px auto;
+    width: 300px;
+    margin-top: 100px;
+    padding: 80px 90px;
+
+}
+.errormsg
+{
+	background-color:white;
+    color:crimson;
+    font-size: 17px;
+}
+.signbutton
+{
+	background-color:white;
+	color: mediumblue;
+	border:none;
+	cursor: pointer;
+	padding: 5px 10px;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	border-radius:10px;
+}
+
+.signbutton:hover
+{
+    background-color: lightskyblue;
+}
+    
+label
+{
+    display: inline-table;
+	width:380px;
+    font: normal 25px Calibri ;
+    color: white;
+}
+    
+field
+{
+    border-color: black;
+}
+
+</style>
+</head>
+<body>
+
+	<header>
+			
+		<form action=".." method = "post">
+            <div class="container">
+			<ul>
+				<li>
+						<label for="name"> User name </label>
+						<input type="text" id="username" placeholder="Enter your user name here" name= "username" required><br><br>
+				</li>
+				<li>
+						<label for="pwd"> Password </label>
+						<input class="field" type="password" placeholder="Enter your password here" id="pass" name="password" required><br><br>
+				</li>
+
+                <button class="signbutton" type="submit" style="margin-left:95px">Sign in</button>
+				<li class="button">
+                    <br><label><b>Create an Account?</b></label>
+						<button class= "signbutton" type="submit" onclick="window.location='/usercreation';">Sign up</button>
+				</li>
+                
+                {% if error1 == 'false' %}
+	            <p class="errormsg">
+                    <b>User name doesn't exists.Please create an account</b>
+                </p>
+	            {% endif %}
+                
+                {% if error3 == 'false' %}
+	            <p class="errormsg">
+                    <b>Invalid Credentials</b>
+                </p>
+	            {% endif %}
+                
+                {% if insertion == 'true' %}
+	            {% endif %}
+
+			</ul>
+            </div>
+		</form>
+	</header>
+</body>
+</html>

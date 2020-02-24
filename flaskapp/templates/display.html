@@ -1,0 +1,125 @@
+<!doctype html>  
+<html lang="en">
+<head>
+<h4>Welcome to your DB</h4>
+<body>
+	    <table class="center">
+	        <tr>
+                <td><b>User first name</b></td>
+                <td>{{userfirstname}}</td>
+	        </tr>
+            <tr>
+	            <td><b>User last name</b></td>
+	            <td>{{userlastname}}</td>
+	        </tr>
+	        <tr>
+	            <td><b>User e-mail id</b></td>
+	            <td>{{email}}</td>
+	        </tr>
+	        <tr>
+	            <td><b>File name </b></td>
+	            <td>{{ Filename }}</td>
+	        </tr>
+	        <tr>
+	            <td><b>Words count in the given text file</b></td>
+	            <td>{{ wordcount }}</td>
+            </tr>
+            <tr>
+                <td><b>User's uploaded file </b></td>
+	            <td><button class="downloadbtn" type="button" onclick="window.location='/files/{{Filename}}';" style = "margin-left: 2%;">Click to download</button></td></tr>
+	</table>
+	
+
+<form action="update" method="post" enctype="multipart/form-data">
+    <br><font color="red">Please choose text files only to upload(.txt only)</font>
+    <input type="file" name="file" accept = "application/txt" required>
+    <input type="submit" value="Upload your file" name= "file">
+    
+    <input type="hidden" id="username" name="username" value={{ username }}>
+</form>
+<button class ="prevbutton" type="reset" onclick="location.href='/'">
+    Previous Page
+</button>
+
+<style>
+h4
+{
+	color: black;
+	text-align:center; 
+}
+body
+{
+    background-color: linen;
+    background-image:url(http://backgrounds4k.net/wp-content/uploads/2016/03/White-Abstract-background-3840x2160.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}    
+.prevbutton
+{
+   
+    background-color:white;
+	color: mediumblue;
+	border:round;
+	cursor: pointer;height:23px; 
+    width:150px; 
+    margin: 10px -60px; 
+    position:relative;
+    display: inline-block;	padding: 5px 10px;
+	text-decoration: none;
+	font-size: 16px;
+	border-radius:10px;
+    left:50%;
+	top:70%;
+}
+.prevbutton:hover
+{
+    background-color: lightskyblue;
+}
+    
+
+.downloadbtn
+{
+    background-color:white;
+	color: mediumblue;
+	border: round;
+    cursor: pointer;
+}
+.downloadbtn:hover
+{
+    background-color: lightskyblue;
+}
+
+table.center
+{
+    margin-left:auto;
+    margin-right:auto;
+    font: 1em sans-serif;
+    margin: 0 auto;
+    width: 700px;
+    margin-top: 100px;
+    padding: 1em;
+    border: 0px solid #CCC;
+    border-radius: 0em;
+}
+
+label
+{
+    
+	width:380px;
+    font: normal 25px Calibri ;
+    color: white;
+}
+form
+{
+  margin: 0 auto;
+  width: 700px;
+  margin-top: 50px;
+  padding: 1em;
+  border: 0px solid #CCC;
+  border-radius: 0em;
+}
+
+</style>
+    </head>
+	</body>
+	</html>
